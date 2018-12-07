@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="paolosantaniello.View_Controller.MainController">
+   <children>
+      <SplitPane dividerPositions="0.49888641425389757" layoutX="350.0" layoutY="120.0" prefHeight="400.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="394.0">
+               <children>
+                  <HBox layoutX="123.0" layoutY="7.0" prefHeight="75.0" prefWidth="445.0" AnchorPane.bottomAnchor="323.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label prefHeight="75.0" prefWidth="445.0" text="Inventory Management System">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <BorderPane layoutX="24.0" layoutY="97.0" prefHeight="200.0" prefWidth="400.0" AnchorPane.leftAnchor="22.5" AnchorPane.rightAnchor="22.5" AnchorPane.topAnchor="97.0">
+                     <center>
+                        <TableView fx:id="partsTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="partsIDColumn" prefWidth="100.0" text="Part ID" />
+                            <TableColumn fx:id="partsNameColumn" prefWidth="100.0" text="Part Name" />
+                              <TableColumn fx:id="partsInventoryColumn" prefWidth="100.0" text="Inventory Level" />
+                              <TableColumn fx:id="partsPriceColumn" prefWidth="100.0" text="Price per Unit" />
+                          </columns>
+                        </TableView>
+                     </center>
+                     <top>
+                        <HBox prefHeight="45.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label prefHeight="25.0" prefWidth="67.0" text="Parts">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="MAINSearchParts" mnemonicParsing="false" onAction="#MAINSearchPartsHandler" prefHeight="30.0" prefWidth="75.0" text="Search">
+                                 <HBox.margin>
+                                    <Insets left="125.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <TextField fx:id="MAINSearchPartText" promptText=" Part ID or Name">
+                                 <HBox.margin>
+                                    <Insets left="20.0" top="5.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="System Italic" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </top>
+                     <bottom>
+                        <HBox prefHeight="45.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button fx:id="MAINAddParts" mnemonicParsing="false" onAction="#MAINAddPartsHandler" prefHeight="30.0" prefWidth="75.0" text="Add">
+                                 <HBox.margin>
+                                    <Insets left="125.0" top="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="MAINModParts" mnemonicParsing="false" onAction="#MAINModPartsHandler" prefHeight="30.0" prefWidth="75.0" text="Modify">
+                                 <HBox.margin>
+                                    <Insets left="20.0" top="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="MAINDelParts" mnemonicParsing="false" onAction="#MAINDelPartsHandler" prefHeight="30.0" prefWidth="75.0" text="Delete">
+                                 <HBox.margin>
+                                    <Insets left="20.0" top="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </bottom>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <HBox layoutX="124.0" layoutY="17.0" prefHeight="75.0" prefWidth="447.0" AnchorPane.bottomAnchor="323.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button fx:id="MAINExit" layoutX="304.0" layoutY="340.0" mnemonicParsing="false" onAction="#MAINExitHandler" prefHeight="30.0" prefWidth="75.0" text="Exit" />
+                  <BorderPane layoutX="23.0" layoutY="106.0" prefHeight="200.0" prefWidth="400.0" AnchorPane.leftAnchor="22.5" AnchorPane.rightAnchor="22.5" AnchorPane.topAnchor="97.0">
+                     <center>
+                        <TableView fx:id="productsTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="productsIDColumn" prefWidth="100.0" text="Product ID" />
+                            <TableColumn fx:id="productsNameColumn" prefWidth="100.0" text="Product Name" />
+                              <TableColumn fx:id="productsInventoryColumn" prefWidth="100.0" text="Inventory Level" />
+                              <TableColumn fx:id="productsPriceColumn" prefWidth="100.0" text="Price per Unit" />
+                          </columns>
+                        </TableView>
+                     </center>
+                     <top>
+                        <HBox prefHeight="45.0" prefWidth="402.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label prefHeight="27.0" prefWidth="100.0" text="Products">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="MAINSearchProd" mnemonicParsing="false" onAction="#MAINSearchProdHandler" prefHeight="30.0" prefWidth="75.0" text="Search">
+                                 <HBox.margin>
+                                    <Insets left="125.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <TextField fx:id="MAINSearchProdText" promptText="Product ID or Name">
+                                 <HBox.margin>
+                                    <Insets left="20.0" top="5.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="System Italic" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </top>
+                     <bottom>
+                        <HBox prefHeight="45.0" prefWidth="402.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button fx:id="MAINAddProd" mnemonicParsing="false" onAction="#MAINAddProdHandler" prefHeight="30.0" prefWidth="75.0" text="Add">
+                                 <HBox.margin>
+                                    <Insets left="125.0" top="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="MAINModProd" mnemonicParsing="false" onAction="#MAINModProdHandler" prefHeight="30.0" prefWidth="75.0" text="Modify">
+                                 <HBox.margin>
+                                    <Insets left="20.0" top="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="MAINDelProd" mnemonicParsing="false" onAction="#MAINDelProdHandler" prefHeight="30.0" prefWidth="75.0" text="Delete">
+                                 <HBox.margin>
+                                    <Insets left="20.0" top="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </bottom>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
